@@ -14,16 +14,18 @@
 }
 
 .App-header {
-  background-color: #17b87a;
+  background-color: #c5c5c5;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(0, 0, 0);
   
 }
+
+
 
 .App-link {
   color: #61dafb;
@@ -39,15 +41,16 @@
 }
 
 body {
-  background-color: #aeb3b1;
+  background-color: #51e0a7;
 }
 
 .vraag{
-  background-color: #17b87a;
+  background-color: #c5c5c5;
   margin: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 40px;
+  border-radius: 10px;
 }
