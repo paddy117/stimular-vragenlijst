@@ -54,7 +54,7 @@ class App extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    alert('A name was submitted: ' + this.state.name);
     event.preventDefault();
   }
 
@@ -95,7 +95,7 @@ class App extends React.Component {
 
         <label>
           Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange}/>
+          <input type="text" name={this.state.name} onChange={this.handleChange}/>
         </label>
         
         </div>
@@ -111,7 +111,7 @@ class App extends React.Component {
           </select>
           <br></br>
           <br></br>
-          <input type="submit" value="Submit" />
+          <input type="submit" name="Submit" />
         </label>
         </div>
       </form>
