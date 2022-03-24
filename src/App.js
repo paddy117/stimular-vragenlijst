@@ -54,9 +54,11 @@ class App extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    alert('A name was submitted: ' + this.state.name);
     event.preventDefault();
   }
+
+  
 
   render() {
     return (
@@ -70,22 +72,21 @@ class App extends React.Component {
         <div className="vraag">
         <h>Vraag 1</h>
         <p>dit is vraag 1</p>
-      <label>
-          ja:
-          <input
-            name="ja"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} />
-            </label>
+      {/* <label><input name="ja" type="radio"/>ja: </label>        
+          
             <label>
               Nee:
            <input
             name="nee"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} />
-        </label>
+            type="radio"
+            // checked={this.state.isGoing}
+            // onChange={this.handleInputChange}
+             />
+        </label> */}
+        <div onChange={event => this.setGender(event)}>
+        <input type="radio" value="MALE" name="gender"/> Male
+        <input type="radio" value="FEMALE" name="gender"/> Female
+      </div>
         <br />
         </div>
         <br />
@@ -95,7 +96,7 @@ class App extends React.Component {
 
         <label>
           Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange}/>
+          <input type="text" value={this.state.name} onChange={this.handleChange}/>
         </label>
         
         </div>
@@ -129,5 +130,7 @@ class App extends React.Component {
 //     </div>
 //   );
 // }
+
+
 
 export default App;
