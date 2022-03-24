@@ -51,10 +51,14 @@ class App extends React.Component {
 
   handleChange(event) {
     this.setState({value: event.target.value});
+    
   }
 
+
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.name);
+    alert('A name was submitted: ' + this.state.user +
+          '\n their favourite food is:' + this.state.favourite +
+          '\n their gender is:' + this.state.gender);
     event.preventDefault();
   }
 
@@ -72,21 +76,27 @@ class App extends React.Component {
         <div className="vraag">
         <h>Vraag 1</h>
         <p>dit is vraag 1</p>
-      {/* <label><input name="ja" type="radio"/>ja: </label>        
-          
+      {/* <label>
+          ja:
+          <input
+            name="ja"
+            type="checkbox"
+            checked={this.state.isGoing}
+            onChange={this.handleInputChange} />
+            </label>
             <label>
               Nee:
            <input
             name="nee"
-            type="radio"
-            // checked={this.state.isGoing}
-            // onChange={this.handleInputChange}
-             />
+            type="checkbox"
+            checked={this.state.isGoing}
+            onChange={this.handleInputChange} />
         </label> */}
-        <div onChange={event => this.setGender(event)}>
+      <div name="gender" onChange={this.handleInputChange}>
         <input type="radio" value="MALE" name="gender"/> Male
         <input type="radio" value="FEMALE" name="gender"/> Female
       </div>
+
         <br />
         </div>
         <br />
@@ -96,7 +106,7 @@ class App extends React.Component {
 
         <label>
           Name:
-          <input type="text" value={this.state.name} onChange={this.handleChange}/>
+          <input name="user" type="text" value={this.state.username} onChange={this.handleInputChange}/>
         </label>
         
         </div>
@@ -104,7 +114,7 @@ class App extends React.Component {
         <div className='vraag'>
         <label>
           Pick your favorite flavor:
-          <select value={this.state.value} onChange={this.handleChange}>
+          <select name="favourite" value={this.state.favourite} onChange={this.handleInputChange}>
             <option value="grapefruit">Grapefruit</option>
             <option value="lime">Lime</option>
             <option value="coconut">Coconut</option>
