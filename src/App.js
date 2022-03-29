@@ -183,9 +183,9 @@ class App extends React.Component {
         </div>
 
         <div className='vraag'>
-        <p ref={ref => this.fooRef = ref} data-tip='tooltip'></p>
-<button onClick={() => { ReactTooltip.hide(this.fooRef) }}></button>
-<ReactTooltip />
+        <a data-tip="React-tooltip"> ◕‿‿◕ </a>
+
+<ReactTooltip place="top" type="success" effect="float"/>
         <label>
           Pick your favorite flavor:
           <select name="favourite" value={this.state.favourite} onChange={this.handleInputChange}>
