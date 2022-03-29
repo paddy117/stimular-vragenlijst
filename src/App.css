@@ -62,3 +62,13 @@ body {
 .checkboxinvis{
   opacity:0;
 }
+
+.theremeterDiv{
+  
+  /* display: flex; */
+  position: relative;
+  /* align-items: center; */
+  left: 0; top: 0;
+  /* justify-content: center; */
+  
+}

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import {Collapse} from 'react-collapse';
+import ReactTooltip from "react-tooltip";
 import collapse from './dropdown.png';
 import './App.css';
 import thermometer from './pictures/thermo-removebg-preview.png'
 import epicLine from './pictures/epicLineFinished.png'  
+
 
 // function App() {
 //   return (
@@ -130,6 +132,7 @@ class App extends React.Component {
       
       <form onSubmit={this.handleSubmit}>
         <div className="vraag">
+          <label>vraag1</label>
         {/* <img src = {collapse} onClick={onChange={}}></img> */}
            <input
               className="checkboxinvis"
@@ -180,6 +183,9 @@ class App extends React.Component {
         </div>
 
         <div className='vraag'>
+        <p ref={ref => this.fooRef = ref} data-tip='tooltip'></p>
+<button onClick={() => { ReactTooltip.hide(this.fooRef) }}></button>
+<ReactTooltip />
         <label>
           Pick your favorite flavor:
           <select name="favourite" value={this.state.favourite} onChange={this.handleInputChange}>
@@ -193,8 +199,10 @@ class App extends React.Component {
           <input type="submit" value="Submit" />
         </label>
         </div>
-        <div><img src = {thermometer} alt="thermometer" width="500" height="400"></img></div>
-        <div><img src = {epicLine} alt="Line" width="100" height="10"></img></div>
+        <div className="theremeterDiv">
+        <div><img src = {thermometer} alt="thermometer" ></img></div>
+        <div><img src = {epicLine} alt="Line"position="absolute" ></img></div>
+        </div>
 
         
       </form>
