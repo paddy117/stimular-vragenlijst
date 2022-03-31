@@ -3,8 +3,11 @@ import {Collapse} from 'react-collapse';
 import ReactTooltip from "react-tooltip";
 import collapse from './dropdown.png';
 import './App.css';
-import thermometer from './pictures/thermo-removebg-preview.png'
-import epicLine from './pictures/epicLineFinished.png'  
+import thermometer from './pictures/undefined.png'
+import thermohoog from './pictures/thermo-hoog.png'
+import thermolaag from './pictures/thermo-laag.png'
+import thermomid from './pictures/thermo-mid.png'
+
 
 
 // function App() {
@@ -54,6 +57,7 @@ class App extends React.Component {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
+    
 
     this.setState({
       [name]: value
@@ -109,6 +113,22 @@ class App extends React.Component {
       v3p = 200
     }
     var totalPoints = v1p + v2p + v3p;
+
+    var meter = 'require(`./pictures/undefined.png`)}';
+    console.log(meter)
+   
+    if(this.state.totalPoints <=100){
+      meter = '{require(`./pictures/thermo-mid.png`)}' 
+      console.log(meter)
+    }else if(this.state.totalPoints <=200){
+      meter = '{require(`./pictures/thermo-mid.png`)}'
+      console.log(meter)
+    }else{
+      meter = '{require(`./pictures/thermo-mid.png`)}'
+      console.log(meter)
+    }
+
+    
   
     alert('A name was submitted: ' + this.state.user +
           '\n their favourite food is:' + this.state.favourite +
@@ -117,7 +137,20 @@ class App extends React.Component {
           
     event.preventDefault();
   }
+   
 
+ 
+// renderSwitch(meter) {
+//   var param =''
+//       switch(meter) {
+//         case '1':
+//           return '{require(`./pictures/thermo-mid.png`)}';
+//         default:
+//           return '{require(`./pictures/undefined.png`)}';
+//       }
+//     };
+
+    
     
 
   render() {
@@ -200,8 +233,9 @@ class App extends React.Component {
         </label>
         </div>
         <div className="theremeterDiv">
-        <div><img src = {thermometer} alt="thermometer" ></img></div>
-        <div><img src = {epicLine} alt="Line"position="absolute" ></img></div>
+          
+        <img src = {this.meter} alt="thermometer" className='thermo' ></img>
+        
         </div>
 
         
